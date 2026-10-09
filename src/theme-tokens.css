@@ -1,0 +1,33 @@
+/* Cores da marca (Dra. Francine) para o design V2 (claro e escuro). O resto do visual vem de v2.css */
+:root, :root[data-bb-theme="light"] {
+  --v-bg: #FFF9EE; --v-surface: #FFFFFF; --v-surface2: #FFF8EA; --v-line: #F0E6D2;
+  --v-ink: #24262E; --v-on-ink: #FFFFFF; --v-text: #24262E; --v-muted: #676A74;
+  --v-g1: #FFE3A3; --v-g2: #F5A800; --v-g3: #E3E7F2; --v-soft: #FCE8BE; --v-ac: #A85F00; --v-ac2: #D9202B; --v-tint: #F1F3FA; --v-tint2: #FFF3D9;
+  --v-on-grad: #2A1D00;
+  color-scheme: light;
+}
+:root[data-bb-theme="dark"] {
+  --v-bg: #121318; --v-surface: #1B1C22; --v-surface2: #22242B; --v-line: #2E3039;
+  --v-ink: #FFF4DC; --v-on-ink: #121318; --v-text: #F1F1F4; --v-muted: #A3A6B2;
+  --v-g1: #FFE3A3; --v-g2: #F5A800; --v-g3: #E3E7F2; --v-soft: #FCE8BE; --v-ac: #FFC233; --v-ac2: #FF6B73; --v-tint: #22252F; --v-tint2: #2A2418;
+  --v-on-grad: #2A1D00;
+  color-scheme: dark;
+}
+
+/* fundo da tela: tom da marca em cima e embaixo, claro no meio */
+:root, :root[data-bb-theme="light"] { --v-bg-top: #FFF0CC; --v-bg-mid: #FFFDF8; --v-bg-bot: #EEF0F8; }
+:root[data-bb-theme="dark"] { --v-bg-top: #2A2214; --v-bg-mid: #121318; --v-bg-bot: #1C1E28; }
+
+/* Agenda: card colorido pelo STATUS (fica por último e com prioridade para o tema v2 não sobrescrever) */
+html :is(.cal-ev, .week-ev, .mt-ev).st-agendado   { background: rgba(var(--st-agendado), .20) !important;   box-shadow: inset 4px 0 0 rgb(var(--st-agendado)) !important;   border-color: rgba(var(--st-agendado), .45) !important; }
+html :is(.cal-ev, .week-ev, .mt-ev).st-confirmado { background: rgba(var(--st-confirmado), .24) !important; box-shadow: inset 4px 0 0 rgb(var(--st-confirmado)) !important; border-color: rgba(var(--st-confirmado), .5) !important; }
+html :is(.cal-ev, .week-ev, .mt-ev).st-concluido  { background: rgba(var(--st-concluido), .20) !important;  box-shadow: inset 4px 0 0 rgb(var(--st-concluido)) !important;  border-color: rgba(var(--st-concluido), .45) !important; opacity: 1 !important; }
+html :is(.cal-ev, .week-ev, .mt-ev).st-faltou     { background: rgba(var(--st-faltou), .24) !important;     box-shadow: inset 4px 0 0 rgb(var(--st-faltou)) !important;     border-color: rgba(var(--st-faltou), .5) !important; opacity: .95 !important; }
+html :is(.cal-ev, .week-ev, .mt-ev).st-cancelado  { background: rgba(var(--st-cancelado), .16) !important;  box-shadow: inset 4px 0 0 rgb(var(--st-cancelado)) !important;  border-color: rgba(var(--st-cancelado), .4) !important; opacity: .75 !important; }
+
+/* Hero do agendamento: logo redonda + nome (a logo da Dra. Francine não tem texto) */
+html .hero-brand { display: flex; align-items: center; gap: 14px; margin: 0 0 18px; }
+html .hero-brand .hero-mark { width: 64px; height: 64px; max-width: none; margin: 0; border-radius: 50%; background: #fff; box-shadow: 0 10px 24px -12px rgba(200, 130, 0, .55); }
+html .hero-brand .hero-name { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -.01em; margin: 0; line-height: 1.1; color: var(--v-text, var(--strong)); }
+html .hero-brand small { display: block; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--v-ac, var(--brass)); font-weight: 700; margin-top: 3px; }
+html .logo-img { border-radius: 50%; background: #fff; }
